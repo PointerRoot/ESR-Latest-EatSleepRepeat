@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>EatSleepRepeat</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../Content/Template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Content/Template/css/icofont.css">
+    <link rel="stylesheet" href="../../Content/Template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Content/Template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../Content/Template/css/animate.css">
+    <link rel="stylesheet" href="../../Content/Template/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="../../Content/Template/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../Content/Template/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../../Content/Template/css/meanmenu.css">
+    <link rel="stylesheet" href="../../Content/Template/css/typography.css">
+    <link rel="stylesheet" href="../../Content/Template/css/style.css">
+    <link rel="stylesheet" href="../../Content/Template/css/responsive.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="../../Content/Template/img/favicon.ico">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../../Content/Template/js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="../../Content/Template/js/jquery-3.2.0.min.js"></script>
+    <script src="../../Content/Template/js/owl.carousel.min.js"></script>
+    <script src="../../Content/Template/js/bootstrap.min.js"></script>
+    <script src="../../Content/AdminPage/bootstrap/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="../../Content/ProjectFiles/ClientView/layout.js"></script> 
+     
+    <!-- Search Autocomplete-->
+    <link rel="stylesheet" href="../../Content/Autocomplete/prism/prism.css" />
+    <link rel="stylesheet" href="../../Content/Autocomplete/awesomplete.css" />
+    <script src="../../Content/Autocomplete/awesomplete.js"></script>
+    <script src="../../Content/Autocomplete/prism/prism.js" defer></script> 
+</head> 
+<body data-spy="scroll" data-target="#scroll-menu" data-offset="100">
+    <div id="preloader"></div>
+    <!-- other-top-pages-start -->
+    <div class="  bg-with-black">
+        <div class="container">
+            <div class="row" id="CarosellayoutPageAdds">  
+            </div>
+        </div>
+    </div> 
+    <!-- header-start -->
+    <header> 
+        <div class="menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="logo">
+                            <a href="../../Home/Index"><img src="../../Content/Template/img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-6 hidden-sm hidden-xs">
+                        <div class="menu">
+                            <nav>
+                                <ul>
+                                    <li><a href="@Url.Action("Index","Home")" id="HomePage">Home</a></li>   
+                                    <li><a href="@Url.Action("Restaurants","Home")" id="Restaurants">Restaurants</a></li>
+                                    <li><a href="@Url.Action("Careers","Home")" id="Careers">Careers</a></li>
+                                    <li><a href="@Url.Action("Contests","Home")" id="Contest">Contests</a></li>
+                                    <li><a href="@Url.Action("Events","Home")" id="Event">Events</a></li>
+                                    <li><a href="@Url.Action("Gallery","Home")" id="Gallery">Gallery</a></li> 
+                                    <li> 
+                                            <section id="ajax-example1">
+                                                <form action="#/" onsubmit="return GetSingleAdminByName()">
+                                                    <input type="text" style="width:600px;" class="form-control input-sm" placeholder="Search for Restaurants" required id="RestaurantsSearch">
+                                                </form>
+                                                <script>
+                                                    var ajax = new XMLHttpRequest();
+                                                    ajax.open("GET", "http://localhost:6063/api/Layout/GetAllNames", true);
+                                                    ajax.onload = function () {
+                                                        var list = JSON.parse(ajax.responseText).map(function (i) { return i.Name; });
+                                                        new Awesomplete(document.querySelector("#ajax-example1 input"), { list: list });
+                                                    };
+                                                    ajax.send();
+                                                </script>
+                                            </section> 
+                                            <span class="glyphicon glyphicon-search form-control-feedback"></span> 
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-area visible-xs visible-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mobile_menu">
+                            <nav id="mobile_menu_active">
+                                <ul>
+                                    <li><a href="@Url.Action("Index","Home")" id="HomePage">Home</a></li>  
+                                    <li><a href="@Url.Action("Restaurants","Home")" id="Restaurants">Restaurants</a></li>
+                                    <li><a href="@Url.Action("Careers","Home")" id="Careers">Careers</a></li>
+                                    <li><a href="@Url.Action("Contests","Home")" id="Contest">Contests</a></li>
+                                    <li><a href="@Url.Action("Events","Home")" id="Event">Events</a></li>
+                                    <li><a href="@Url.Action("Gallery","Home")" id="Gallery">Gallery</a></li> 
+                                    <li>
+                                        <section id="ajax-example3">
+                                            <form action="#/" onsubmit="return GetSingleAdminByName()">
+                                                <input type="text"  class="form-control input-sm" placeholder="Search for Restaurants" required id="RestaurantsSearch">
+                                            </form>
+                                            <script>
+                                                var ajax = new XMLHttpRequest();
+                                                ajax.open("GET", "http://localhost:6063/api/Layout/GetAllNames", true);
+                                                ajax.onload = function () {
+                                                    var list = JSON.parse(ajax.responseText).map(function (i) { return i.Name; });
+                                                    new Awesomplete(document.querySelector("#ajax-example3 input"), { list: list });
+                                                };
+                                                ajax.send();
+                                            </script>
+                                        </section>
+                                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+    <!-- footer-start -->
+    <footer>
+        <div class="footer-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-item footer-item-desc">
+                            <img src="../../Content/Template/img/logo2.png" alt="">
+                            <p>Ut enim ad minim veniam, quis nostrud at exercitation ullamco laboris nisi nemo sit enim ipsam voluptatem quia voluptas</p>
+                            <ul class="footer-social">
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-item footer-item-work-time">
+                            <h4 class="footer-title">Work time</h4>
+                            <ul class="work-time-list">
+                                <li>Monday - Friday <span class="wtl-time">09:00 - 23:00</span></li>
+                                <li>Saturday <span class="wtl-time">11:00 - 01:00</span></li>
+                                <li>Sunday <span class="wtl-time">12:00 - 23:00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-item footer-item-contact-us">
+                            <h4 class="footer-title">Contact Us</h4>
+                            <ul class="contact-address-list">
+                                <li>150 Duffy Ave, Hicksville, NY 11801, USA</li>
+                                <li>+38 056 23 15 7851</li>
+                                <li>Slice.info@mail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-item footer-item-subscribe">
+                            <h4 class="footer-title">Subscribe to our news</h4>
+                            <div class="footer-subscribe-form-area">
+                                <form action="#">
+                                    <div class="fsfa-input">
+                                        <input type="email" placeholder="Your email">
+                                        <input class="hvr-bs" type="submit" value="Submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="footer-bottom">
+                            <p>© 2017All Rights Reserved. Development by <a href="#">RootPointers</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+    <!-- Scripts -->  
+    <script src="../../Content/Template/js/jquery.counterup.min.js"></script>
+    <script src="../../Content/Template/js/countdown.js"></script>
+    <script src="../../Content/Template/js/jquery.timepicker.min.js"></script>
+    <script src="../../Content/Template/js/jquery.fancybox.min.js"></script>
+    <script src="../../Content/Template/js/jquery.meanmenu.js"></script>
+    <script src="../../Content/Template/js/jquery-ui.js"></script>
+    <script src="../../Content/Template/js/jquery.scrollUp.js"></script>
+    <script src="../../Content/Template/js/jquery.mixitup.min.js"></script>
+    <script src="../../Content/Template/js/jquery.waypoints.min.js"></script> 
+    <script src="../../Content/Template/js/theme.js"></script>
+</body>
+
+</html>

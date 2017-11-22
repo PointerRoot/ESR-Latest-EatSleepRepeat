@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ESR Admin | ESR</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../Content/AdminPage/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../Content/AdminPage/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../Content/AdminPage/dist/css/skins/_all-skins.min.css">
+    <link href='../../Content/AdminPage/dist/font/css/font-awesome.min.css' rel='stylesheet' />
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../../Content/AdminPage/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="../../Content/AdminPage/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../../Content/AdminPage/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="../../Content/AdminPage/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../../Content/AdminPage/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="../../Content/AdminPage/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="../../Content/AdminPage/dist/css/styles.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery 2.2.3 -->
+    <script src="../../Content/AdminPage/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="../../Content/AdminPage/bootstrap/js/bootbox.min.js"></script>
+    <link href='../../Content/AdminPage/dist/font/css/font-awesome.min.css' rel='stylesheet' />
+
+    <!-- Search Autocomplete-->
+    <link rel="stylesheet" href="../../Content/Autocomplete/prism/prism.css" />
+    <link rel="stylesheet" href="../../Content/Autocomplete/awesomplete.css" />
+    <script src="../../Content/Autocomplete/awesomplete.js"></script>
+    <script src="../../Content/Autocomplete/prism/prism.js" defer></script>
+
+    <!--CommonFiles-->
+    <script src="../../Content/ProjectFiles/CommonFiles/InputFieldsRestrictions.js"></script>
+
+    <!--ProjectFiles AdminView-->
+    <!--FirstPage-->
+    <script src="../../Content/ProjectFiles/AdminView/Dashboard/FirstPage.js"></script>
+    <!--Analytics-->
+    <script src="../../Content/ProjectFiles/AdminView/Analaytics/Analaytics.js"></script>
+    <!--Admins-->
+    <script src="../../Content/ProjectFiles/AdminView/Admins/AddAdmins.js"></script>
+    <!--Contests-->
+    <script src="../../Content/ProjectFiles/AdminView/Contests/AddContests.js"></script>
+    <!--Deals-->
+    <script src="../../Content/ProjectFiles/AdminView/Deals/AddDeals.js"></script>
+    <!--News-->
+    <script src="../../Content/ProjectFiles/AdminView/News/AddNews.js"></script>
+    <!--Careers-->
+    <script src="../../Content/ProjectFiles/AdminView/Careers/AddCareers.js"></script>
+    <!--Clients-->
+    <script src="../../Content/ProjectFiles/AdminView/Clients/AddClients.js"></script>
+    <!--Events-->
+    <script src="../../Content/ProjectFiles/AdminView/Events/AddEvents.js"></script>
+    <!--Pakages-->
+    <script src="../../Content/ProjectFiles/AdminView/Pakages/AddPakages.js"></script>
+    <!--Restaurants-->
+    <script src="../../Content/ProjectFiles/AdminView/Restaurants/AddRestaurants.js"></script>
+     <!--Services-->
+    <script src="../../Content/ProjectFiles/AdminView/Services/AddServices.js"></script>
+    <!--Tags-->
+    <script src="../../Content/ProjectFiles/AdminView/Tags/AddTags.js"></script>
+    <!--Users-->
+    <script src="../../Content/ProjectFiles/AdminView/Users/AddUsers.js"></script> 
+    <script>
+        $(document).ready(function () {
+            //Hidden Divs
+
+        });
+
+    </script>
+    <!-- Content Wrapper. Contains page content -->
+    <style type="text/css">
+        .productbox {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #cfcfcf;
+            -moz-box-shadow: 2px 2px 4px 0px #cfcfcf;
+            -webkit-box-shadow: 2px 2px 4px 0px #cfcfcf;
+            -o-box-shadow: 2px 2px 4px 0px #cfcfcf;
+            box-shadow: 2px 2px 4px 0px #cfcfcf;
+            filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
+        }
+
+        .producttitle {
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 5px 0 5px 0;
+        }
+
+        .producttext {
+        }
+
+        .productprice {
+            border-top: 1px solid #dadada;
+            padding-top: 5px;
+        }
+
+        .pricetext {
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="padding-right:0px;">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#/" onclick="myFunctionSwapView('first_Home_Page');" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>E</b>SR</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>ESR</b>Admin</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../../Content/AdminPage/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">ESR Admin</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="../../Content/AdminPage/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        Albert Pinto Admin ESR
+                                        <small>Member since Nov. 2015</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer"> 
+                                    @using Microsoft.AspNet.Identity
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <div class="pull-right">
+                                                <a href="javascript:document.getElementById('logoutForm').submit()" style="margin-right:10px;" class="btn btn btn-default ">Sign out</a>
+                                            </div> 
+                                        }
+                                    }
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!--Important.... Div Changer-->
+        <input type="text" hidden value="first_Home_Page" id="divChangeHelper" />
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="../../Content/AdminPage/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Albert Pinto</p>
+                     <i class="fa fa-circle text-success"></i> Online 
+                    </div>
+                </div>
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">Options</li>
+                    <li class="treeview ">
+                        <a href="#/" onclick="myFunctionSwapView('Analaytics');">
+                            <i class="fa fa-pie-chart"></i> <span>Analaytics</span>
+                        </a>
+                    </li>
+                    <li class="treeview active">
+                        <a href="#/" onclick="myFunctionSwapView('first_Home_Page');">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('AdminDetails');">
+                            <i class="fa fa fa-user-md"></i>
+                            <span>Admin</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('UserDetails');">
+                            <i class="fa fa-users"></i><span>Users</span>
+                        </a>
+                    </li> 
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('CareerDetails');">
+                            <i class="fa fa fa-cogs"></i>
+                            <span>Careers</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('ContestDetails');">
+                            <i class="fa fa fa-angellist"></i>
+                            <span>Contests</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('ClientDetails');">
+                            <i class="fa fa fa-building-o"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('EventDetails');">
+                            <i class="fa fa fa-map-marker"></i>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('NewDetails');">
+                            <i class="fa fa fa-newspaper-o"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('PakageDetails');">
+                            <i class="fa fa fa-briefcase"></i>
+                            <span>Pakages</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('RestaurantDetails');">
+                            <i class="fa fa fa-cutlery"></i>
+                            <span>Restaurants</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('DealDetails');">
+                            <i class="fa fa fa-coffee"></i>
+                            <span>Deal</span>
+                        </a>
+                    </li>  
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('Messages');">
+                            <i class="fa fa fa-share"></i>
+                            <span>Event E_mails</span>
+                        </a>
+                    </li>  
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('ServiceDetails');">
+                            <i class="fa fa-line-chart"></i><span>Service</span>
+                        </a>
+                    </li>
+                    
+                    <li class="treeview">
+                        <a href="#/" onclick="myFunctionSwapView('TagDetails');">
+                            <i class="fa fa-tag"></i><span>Tags</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview"> 
+                        <a href="javascript:document.getElementById('logoutForm').submit()">
+                            <i class="glyphicon glyphicon-off"></i> <span>LogOut</span>
+                        </a>
+                        @using Microsoft.AspNet.Identity
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"  }))
+                            {
+                                @Html.AntiForgeryToken() 
+                                   
+                              
+                            }
+                        }
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        @RenderBody()
+
+
+        @RenderSection("scripts", required: false)
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                @*<b>Version</b> 2.3.8*@
+            </div>
+            @*<strong>Copyright &copy; 2014-2016 <a href="#/">AlmseedStudio</a>.</strong> All rights
+                reserved.*@
+        </footer>
+
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../../Content/AdminPage/bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../Content/AdminPage/plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../Content/AdminPage/dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../Content/AdminPage/dist/js/demo.js"></script>
+    <!-- FLOT CHARTS -->
+    <script src="../../Content/AdminPage/plugins/flot/jquery.flot.min.js"></script>
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script src="../../Content/AdminPage/plugins/flot/jquery.flot.resize.min.js"></script>
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <script src="../../Content/AdminPage/plugins/flot/jquery.flot.pie.min.js"></script>
+    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+    <script src="../../Content/AdminPage/plugins/flot/jquery.flot.categories.min.js"></script>
+    <!-- Page script -->
+    <!-- iCheck -->
+    <script src="../../Content/AdminPage/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            //Enable iCheck plugin for checkboxes
+            //iCheck for checkbox and radio inputs
+            $('.mailbox-messages input[type="checkbox"]').iCheck({
+                checkboxClass: 'icheckbox_flat-blue',
+                radioClass: 'iradio_flat-blue'
+            });
+
+            //Enable check and uncheck all functionality
+            $(".checkbox-toggle").click(function () {
+                var clicks = $(this).data('clicks');
+                if (clicks) {
+                    //Uncheck all checkboxes
+                    $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+                    $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+                } else {
+                    //Check all checkboxes
+                    $(".mailbox-messages input[type='checkbox']").iCheck("check");
+                    $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+                }
+                $(this).data("clicks", !clicks);
+            });
+
+            //Handle starring for glyphicon and font awesome
+            $(".mailbox-star").click(function (e) {
+                e.preventDefault();
+                //detect type
+                var $this = $(this).find("a > i");
+                var glyph = $this.hasClass("glyphicon");
+                var fa = $this.hasClass("fa");
+
+                //Switch states
+                if (glyph) {
+                    $this.toggleClass("glyphicon-star");
+                    $this.toggleClass("glyphicon-star-empty");
+                }
+
+                if (fa) {
+                    $this.toggleClass("fa-star");
+                    $this.toggleClass("fa-star-o");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            /*
+             * Flot Interactive Chart
+             * -----------------------
+             */
+            // We use an inline data source in the example, usually data would
+            // be fetched from a server
+            var data = [], totalPoints = 100;
+
+            function getRandomData() {
+
+                if (data.length > 0)
+                    data = data.slice(1);
+
+                // Do a random walk
+                while (data.length < totalPoints) {
+
+                    var prev = data.length > 0 ? data[data.length - 1] : 50,
+                        y = prev + Math.random() * 10 - 5;
+
+                    if (y < 0) {
+                        y = 0;
+                    } else if (y > 100) {
+                        y = 100;
+                    }
+
+                    data.push(y);
+                }
+
+                // Zip the generated y values with the x values
+                var res = [];
+                for (var i = 0; i < data.length; ++i) {
+                    res.push([i, data[i]]);
+                }
+
+                return res;
+            }
+
+            var interactive_plot = $.plot("#interactive", [getRandomData()], {
+                grid: {
+                    borderColor: "#f3f3f3",
+                    borderWidth: 1,
+                    tickColor: "#f3f3f3"
+                },
+                series: {
+                    shadowSize: 0, // Drawing is faster without shadows
+                    color: "#3c8dbc"
+                },
+                lines: {
+                    fill: true, //Converts the line chart to area chart
+                    color: "#3c8dbc"
+                },
+                yaxis: {
+                    min: 0,
+                    max: 100,
+                    show: true
+                },
+                xaxis: {
+                    show: true
+                }
+            });
+
+            var updateInterval = 500; //Fetch data ever x milliseconds
+            var realtime = "on"; //If == to on then fetch data every x seconds. else stop fetching
+            function update() {
+
+                interactive_plot.setData([getRandomData()]);
+
+                // Since the axes don't change, we don't need to call plot.setupGrid()
+                interactive_plot.draw();
+                if (realtime === "on")
+                    setTimeout(update, updateInterval);
+            }
+
+            //INITIALIZE REALTIME DATA FETCHING
+            if (realtime === "on") {
+                update();
+            }
+            //REALTIME TOGGLE
+            $("#realtime .btn").click(function () {
+                if ($(this).data("toggle") === "on") {
+                    realtime = "on";
+                }
+                else {
+                    realtime = "off";
+                }
+                update();
+            });
+            /*
+             * END INTERACTIVE CHART
+             */
+
+
+            /*
+             * BAR CHART
+             * ---------
+             */
+
+            var bar_data = {
+                data: [["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9]],
+                color: "#3c8dbc"
+            };
+            $.plot("#bar-chart", [bar_data], {
+                grid: {
+                    borderWidth: 1,
+                    borderColor: "#f3f3f3",
+                    tickColor: "#f3f3f3"
+                },
+                series: {
+                    bars: {
+                        show: true,
+                        barWidth: 0.5,
+                        align: "center"
+                    }
+                },
+                xaxis: {
+                    mode: "categories",
+                    tickLength: 0
+                }
+            });
+            /* END BAR CHART */
+
+            /*
+             * DONUT CHART
+             * -----------
+             */
+
+            var donutData = [
+              { label: "Series2", data: 30, color: "#3c8dbc" },
+              { label: "Series3", data: 20, color: "#0073b7" },
+              { label: "Series4", data: 50, color: "#00c0ef" }
+            ];
+            $.plot("#donut-chart", donutData, {
+                series: {
+                    pie: {
+                        show: true,
+                        radius: 1,
+                        innerRadius: 0.5,
+                        label: {
+                            show: true,
+                            radius: 2 / 3,
+                            formatter: labelFormatter,
+                            threshold: 0.1
+                        }
+
+                    }
+                },
+                legend: {
+                    show: false
+                }
+            });
+            /*
+             * END DONUT CHART
+             */
+
+        });
+
+        /*
+         * Custom Label formatter
+         * ----------------------
+         */
+        function labelFormatter(label, series) {
+            return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+                + label
+                + "<br>"
+                + Math.round(series.percent) + "%</div>";
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+

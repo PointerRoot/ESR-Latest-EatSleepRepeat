@@ -1,0 +1,138 @@
+﻿@using AdminESR.Models
+@model LoginViewModel 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EatSleepRepeatESR</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("../../Content/AdminPage/loginPage.jpg");
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .center {
+            margin-top: 50px;
+        }
+
+        .modal-header {
+            padding-bottom: 5px;
+        }
+
+        .modal-footer {
+            padding: 0;
+        }
+
+            .modal-footer .btn-group button {
+                height: 40px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border: none;
+                border-right: 1px solid #ddd;
+            }
+
+            .modal-footer .btn-group:last-child > button {
+                border-right: 0;
+            }
+
+        #header {
+            width: 700px;
+            height: 200px position: relative;
+            text-align: center;
+            background: #000 url(the-logo.png) no-repeat 30px 10px;
+        }
+
+            #header .close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+    </style>
+
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../Content/AdminPage/bootstrap/css/bootstrap.min.css">
+    <!--JS Files-->
+    <!-- jQuery 2.2.3 -->
+    <script src="../../Content/AdminPage/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../../Content/AdminPage/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function () {
+            $("#squarespaceModalAdmin").modal();
+        });
+    </script> 
+
+    <div class="bg">
+        <a href="#/" data-toggle="modal" data-target="#squarespaceModalAdmin" class="close" style="color:red;">Login As Admin</a>
+    </div>
+
+    <!-- line modal -->
+    <div class="modal fade" id="squarespaceModalAdmin" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content  row">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <br />
+                    <div id="loginboxAdmin" class="mainbox col-md-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title">LogIn As Admin</div> 
+                            </div>
+
+                            <div style="padding-top:30px" class="panel-body">
+
+                                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                                <section id="loginForm">
+                                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                      {
+                                        @Html.AntiForgeryToken()  
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @required = "required" })
+                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <div class="col-md-10">
+                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div> 
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Log in" class="btn btn-default" />
+                                            </div>
+                                        </div> 
+                                      }
+                                </section> 
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+﻿@{
+    ViewBag.Title = "adminPage";
+    Layout = "~/Views/Shared/_adminShared.cshtml";
+} 
+<script>
+    function myFunctionSwapView(id) {
+        if (id == "first_Home_Page") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/firstPageToOpen")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    FirstPageToOpen();
+                }
+            });
+        }
+        else if (id == "AdminDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/AdminDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    AdminDetailsOpenFunction(0);
+                }
+            });
+        }
+        else if (id == "Analaytics") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/Analaytics")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    AnalayticsFunction(0);
+                }
+            });
+        }
+
+        else if (id == "ContestDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/ContestDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+
+                    ContestDetailsOpenFunction(0);
+                }
+            });
+        }
+        else if (id == "Messages") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/Messages")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    EventsEmailFunction("RequestedEmail");
+                } 
+            });
+            return false;
+        }
+        else if (id == "DealDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/DealDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+
+                    DealDetailsOpenFunction(0);
+                }
+            });
+        }
+        else if (id == "CareerDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/CareerDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    CareerDetailsOpenFunction(0);
+                }
+            });
+        }
+        else if (id == "ClientDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/ClientDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    ClientDetailsOpenFunction(0);
+                }
+            });
+        }
+        else if (id == "EventDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/EventDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    EventDetailsOpenFunction(0);
+                }
+            });
+
+        }
+        else if (id == "NewDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/NewDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    NewDetailsOpenFunction(0);
+                }
+            });
+
+        }
+        else if (id == "PakageDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/PakageDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    PakageDetailsOpenFunction(0);
+                }
+            });
+
+        }
+        else if (id == "RestaurantDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/RestaurantDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    RestaurantDetailsOpenFunction(0);
+                }
+            });
+
+        }
+        else if (id == "ServiceDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/ServiceDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    ServiceDetailsOpenFunction(0);
+                }
+            });
+
+        }
+        else if (id == "UserDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/UserDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    UserDetailsOpenFunction(0);
+                }
+            });
+
+        }
+        else if (id == "TagDetails") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/TagDetails")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    TagDetailsOpenFunction(0);
+                }
+            });
+
+        }
+
+        document.getElementById("divChangeHelper").value = id;
+
+        return false;
+    }
+
+</script>
+<script>
+    function myFunctionSwapView2(id1, id2) {
+        if (id2 == "CareerUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/CareerUpdates")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    CareerUpdate(id1);
+                }
+
+            });
+        return false;
+        } 
+        else if (id2 == "EventApplicants") { 
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/TicketBookings")",
+                data: { 
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    StartFunction(id1);
+                }
+            });
+        }
+        else if (id2 == "ClientUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/ClientUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    ClientUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "AdminUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/AdminUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    AdminUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "DealUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/DealUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    DealUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "ContestUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/ContestUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    ContestUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "EventUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/EventUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    EventUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "NewUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/NewUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    NewUpdate(id1);
+                }
+
+            });
+            return false;
+        } 
+        else if (id2 == "PakageUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/PakageUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    PakageUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "RestaurantUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/RestaurantUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    RestaurantUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "ServiceUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/ServiceUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    ServiceUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "TagUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/TagUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    TagUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+        else if (id2 == "UserUpdate") {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Content("../../Admin/UserUpdate")",
+                data: {
+
+                },
+                dataType: 'html', //dataType - html
+                success: function (result) {
+                    //Create a Div around the Partial View and fill the result
+                    $('#first_Home_Page').empty();
+                    $('#first_Home_Page').html(result);
+                    UserUpdate(id1);
+                }
+
+            });
+            return false;
+        }
+    }
+</script>
+<div id="first_Home_Page">
+    @Html.Action("firstPageToOpen", "Admin")
+</div>
+
+

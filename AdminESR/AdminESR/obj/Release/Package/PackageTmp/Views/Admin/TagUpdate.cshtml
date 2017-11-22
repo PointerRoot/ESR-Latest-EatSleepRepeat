@@ -1,0 +1,123 @@
+﻿
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../Content/ProjectFiles/AdminView/Tags/UpdateTags.js"></script>
+</head>
+<style>
+    .blackiconcolor {
+        color: red;
+    }
+
+        .blackiconcolor:hover {
+            color: brown;
+        }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="min-height:900px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Tag
+            <small>Update</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Tag - Update</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3 id="UsersCounth3Div">@ViewBag.UsersCount</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-users"></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('UserDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3 id="ClientsCounth3Div">@ViewBag.ClientsCount</h3>
+                        <p>Total Clients</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-user"></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('ClientDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3 id="PakagesCounth3Div">@ViewBag.PakagesCount</h3>
+                        <p>Total Pakages</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-file-text "></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('PakageDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3 id="EventsCounth3Div">@ViewBag.EventsCount</h3>
+                        <p>Total Events</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-camera"></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('EventDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- Add Tag -->
+            <section class="col-lg-12 connectedSortable">
+                <div id="signupbox" class="mainbox">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Update Tag</div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="Tagform" action="#/" method="post" onsubmit="return UpdateTagForm()" class="form-horizontal" role="form">
+                                <div class="form-group" hidden>
+                                    <input type="text" class="form-control" id="TagId" hidden>
+                                </div>
+                                <div class="form-group">
+                                    <label for="icode" class="col-md-3 control-label">Description</label>
+                                    <div class="col-md-9">
+                                        <textarea rows="4" cols="100" maxlength="150" required style="resize:vertical;" class="form-control" id="TagDescription" placeholder="Enter News Description!"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="BtnTag" type="submit" class="btn btn-success"><i class="icon-hand-right"></i> &nbsp Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Add Tag -->
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+

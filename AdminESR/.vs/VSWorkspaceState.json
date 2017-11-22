@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AdminESR",
+    "\\AdminESR\\Content",
+    "\\AdminESR\\Content\\Template",
+    "\\AdminESR\\Views",
+    "\\AdminESR\\Views\\Shared"
+  ],
+  "SelectedNode": "\\AdminESR\\Views\\Shared\\_adminShared.cshtml",
+  "PreviewInSolutionExplorer": false
+}

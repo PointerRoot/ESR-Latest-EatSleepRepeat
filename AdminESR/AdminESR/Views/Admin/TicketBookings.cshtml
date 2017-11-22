@@ -1,0 +1,92 @@
+﻿<head>
+    <title></title>
+    <script type="text/javascript" src="../../Content/ProjectFiles/AdminView/EventAttendies/EventAttendies.js"></script>
+</head>
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="min-height:900px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Event Applicants
+            <small id="NumberOfEventAttendiess"></small>
+        </h1>
+
+        <ol class="breadcrumb">
+            <li><a href="#" onclick="myFunctionSwapView('first_Home_Page');"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Event Applicants</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <!-- /.col -->
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">List</h3>
+                        <div class="box-tools pull-right">
+                            <div id="SearchbarDivision">
+
+                            </div> 
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div class="mailbox-controls">
+                            <!-- Check all button -->
+                            <a href="#/" class="btn btn-default btn-sm" onclick="EventAttendiesCheakingCheckboxes1()" data-toggle="tooltip" title="Select All">
+                                <input type="checkbox" id="select_all1" />
+                            </a>
+                            <div class="btn-group">
+                                <button type="button" onclick="EventAttendiesDeleteFunction()" class="btn btn-default btn-sm" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></button>
+                                <a href="#/" onclick="return myFunctionSwapView('first_Home_Page');" class="btn btn-default btn-sm"><i class="fa fa-plus"></i></a>
+                            </div>
+                            <!-- /.btn-group -->  
+                        </div>
+                        <div class="table-responsive mailbox-messages" >
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Full Name</th>
+                                        <th>Tickets</th>
+                                        <th>CNIC</th>
+                                        <th>Email</th> 
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="EventAttendiesDetailsDataBody"> 
+                                </tbody>
+                            </table>
+                            <!-- /.table -->
+                        </div>
+                        <!-- /.mail-box-messages -->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer no-padding">
+                        <div class="mailbox-controls">
+                            <!-- Check all button -->
+                            <a href="#/" class="btn btn-default btn-sm" onclick="EventAttendiesCheakingCheckboxes2()" data-toggle="tooltip" title="Select All">
+                                <input type="checkbox" id="select_all2" />
+                            </a>
+                            <div class="btn-group">
+                                <button type="button" onclick="EventAttendiesDeleteFunction()" class="btn btn-default btn-sm" data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></button>
+                                <a href="#/" onclick="return myFunctionSwapView('first_Home_Page');" class="btn btn-default btn-sm"><i class="fa fa-plus"></i></a>
+                            </div>
+                            <!-- /.btn-group --> 
+                            <!-- /.pull-right -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /. box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+
+ 

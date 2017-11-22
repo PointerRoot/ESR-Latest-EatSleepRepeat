@@ -1,0 +1,166 @@
+﻿
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../Content/ProjectFiles/AdminView/Users/UpdateUsers.js"></script>
+</head>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="min-height:900px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small>User</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#" onclick="myFunctionSwapView('first_Home_Page');"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">User</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3 id="UsersCounth3Div">@ViewBag.UsersCount</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-users"></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('UserDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3 id="ClientsCounth3Div">@ViewBag.ClientsCount</h3>
+                        <p>Total Clients</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-user"></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('ClientDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3 id="PakagesCounth3Div">@ViewBag.PakagesCount</h3>
+                        <p>Total Pakages</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-file-text "></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('PakageDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3 id="EventsCounth3Div">@ViewBag.EventsCount</h3>
+                        <p>Total Events</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa fa-camera"></i>
+                    </div>
+                    <a href="#/" onclick="myFunctionSwapView('EventDetails');" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- User Sign Up -->
+            <section class="col-lg-12 connectedSortable">
+                <div id="signupbox" class="mainbox">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Update User</div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="Userform" action="#/" method="post" onsubmit="return validateUpdateForm()" class="form-horizontal" role="form">
+
+                                <div class="form-group" hidden>
+                                    <div class="col-md-9">
+                                        <input type="text" hidden id="UserId" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="icode" class="col-md-3 control-label">Image</label>
+                                    <div class="col-md-9">
+                                        <input type="file" class="form-control" name="UserImage" id="UserImage">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Name" class="col-md-3 control-label">Name*</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" maxlength="50" name="Name" required id="Name" placeholder="AlbertPinto">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email" class="col-md-3 control-label">Email*</label>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" maxlength="50" name="Email" required id="Email" placeholder="ali@abc.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="UserName" class="col-md-3 control-label">UserName*</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="UserName" required id="UserName" pattern="(.){8,50}" placeholder="Alber123: min 8 Character">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password" class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" maxlength="50" class="form-control" pattern="(.){8,50}" name="Password" id="Password" placeholder="min-8 characters">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ConfirmPassword" class="col-md-3 control-label">Confirm_Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" maxlength="50" name="ConfirmPassword" pattern="(.){8,50}" id="ConfirmPassword" placeholder="Same As Above">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Contact" class="col-md-3 control-label">Contact</label>
+                                    <div class="col-md-9">
+                                        <input type="tel" pattern="(.){10,10}" maxlength="10" onkeypress='validate(event)' class="form-control" name="Contact" id="Contact" placeholder="2371239449">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Address" class="col-md-3 control-label">Address</label>
+                                    <div class="col-md-9">
+                                        <textarea rows="3" cols="100" maxlength="150" class="form-control" name="Address" id="Address" placeholder="Calefornia B Town"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="BtnUser" type="submit" class="btn btn-success"><i class="icon-hand-right"></i> &nbsp Submit</button>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </section>
+    <!-- /.content -->
+</div>
+

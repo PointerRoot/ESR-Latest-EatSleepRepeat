@@ -1,0 +1,79 @@
+﻿
+<body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Progress Charts
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#" onclick="myFunctionSwapView('first_Home_Page');"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Charts</a></li>
+                    <li class="active">Morris</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+              
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- LINE CHART -->
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Restaurants visited</h3>
+                                <div class="has-feedback" id="searchbar1">
+                                    <section id="ajax-example1">
+                                        <form action="#/" onsubmit="return GetSingleRestByName()">
+                                            <input type="text" class="form-control input-sm" placeholder="Search for contest" required name="RestSearch" id="RestSearch">
+                                        </form>
+                                        <script>
+                                        var ajax = new XMLHttpRequest();
+                                        ajax.open("GET", "http://localhost:6063/api/restaurants/GetAllClassesNames", true);
+                                        ajax.onload = function () {
+                                            var list = JSON.parse(ajax.responseText).map(function (i) { return i.Name; });
+                                            new Awesomplete(document.querySelector("#ajax-example1 input"), { list: list });
+                                        };
+                                        ajax.send();
+                                        </script>
+                                    </section>
+
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                </div>
+                                <div class="box-tools pull-right">
+                                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body chart-responsive">
+                                <div class="chart" id="line-chart1" style="height: 300px;"></div>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div><!-- /.col (RIGHT) -->
+                    <div class="col-md-6">
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Tags Used</h3>
+                                <div class="box-tools pull-right">
+                                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body chart-responsive">
+                                <div class="chart" id="line-chart2" style="height: 300px;"></div>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div><!-- /.col (RIGHT) -->
+
+                </div><!-- /.row -->
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+       
+
+        <div class='control-sidebar-bg'></div>
+    </div><!-- ./wrapper -->
+</body>

@@ -1,0 +1,57 @@
+﻿<head>
+    <title></title>
+    <script type="text/javascript" src="../../Content/ProjectFiles/AdminView/Email/Message.js"></script>
+</head>  
+<div class="content-wrapper" style="min-height:900px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Mailbox
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#" onclick="myFunctionSwapView('first_Home_Page')"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Mailbox</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">  
+            <div class="col-md-12" id="Compose" >
+                <div class="box box-primary">
+                      <div class="box-header with-border">
+                          <h3 class="box-title" id="ComposeEmailId"> </h3> 
+                          <div class="box-tools pull-right">
+                              <button type="button" id="RequestedEmail" onclick="EventsEmailFunction('RequestedEmail')" class="btn btn-default btn-sm">RequestedEmail</button>
+                              <button type="button" id="AcceptanceEmail" onclick="EventsEmailFunction('AcceptanceEmail')" class="btn btn-info btn-sm">AcceptanceEmail</button>
+                              <button type="button" id="ApprovalEmail" onclick="EventsEmailFunction('ApprovalEmail')" class="btn btn-success btn-sm">ApprovalEmail</button>
+                              <button type="button" id="RejectionEmail" onclick="EventsEmailFunction('RejectionEmail')" class="btn btn-danger btn-sm">RejectionEmail</button> 
+                          </div>
+                      </div><!-- /.box-header -->
+                    <div class="box-body"> 
+                        <div class="form-group"  hidden >
+                            <input class="form-control" hidden  id="EmailAuthenticationId" />
+                        </div>
+                        <div class="form-group">
+                            <label for="icode" class="control-label">Subject</label>
+                            <input class="form-control"  placeholder="Subject:" id="Subject" />
+                        </div>
+                        <div class="form-group">
+                            <label for="icode" class="control-label">Body</label>
+                            <textarea id="compose-textarea" required class="form-control" style="height: 300px"></textarea>
+                        </div> 
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class="pull-right"> 
+                            <button type="button" id="sendbtn" class="btn btn-primary" onclick="Send()"><i class="fa fa-envelope-o"></i> Save</button>
+                        </div>
+                        <button class="btn btn-default" onclick="myFunctionSwapView('first_Home_Page')"><i class="fa fa-times"></i> Discard</button>
+                    </div><!-- /.box-footer -->
+                </div><!-- /. box -->
+            </div><!-- /.col --> 
+        </div>
+    </section>
+</div>
+
+
+
+
